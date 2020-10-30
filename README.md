@@ -5,11 +5,13 @@ Home: http://github.com/django/channels
 
 Package license: BSD-3-Clause
 
-Feedstock license: BSD 3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/channels-feedstock/blob/master/LICENSE.txt)
 
 Summary: Brings async, event-driven capabilities to Django. Django 2.2 and up only.
 
+Development: http://github.com/django/channels
 
+Documentation: https://channels.readthedocs.io
 
 Current build status
 ====================
