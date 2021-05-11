@@ -19,8 +19,8 @@ requirements:
     - pip
     - python >=3.5
   run:
-    - asgiref >=3.2,<4
-    - daphne >=2.3,<3
+    - asgiref >=3.2.10,<4
+    - daphne >=3.0,<4
     - django >=2.2
     - python >=3.5
 
