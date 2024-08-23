@@ -7,7 +7,7 @@ Home: http://github.com/django/channels
 
 Package license: BSD-3-Clause
 
-Summary: Brings async, event-driven capabilities to Django. Django 2.2 and up only.
+Summary: Brings async, event-driven capabilities to Django. Django 3.2 and up only.
 
 Development: http://github.com/django/channels
 
