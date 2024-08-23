@@ -10,19 +10,19 @@ source:
   sha256: e0ed375719f5c1851861f05ed4ce78b0166f9245ca0ecd836cb77d4bb531489d
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . --no-deps -vv
   noarch: python
 
 requirements:
   host:
     - pip
-    - python >=3.7
+    - python >=3.8
   run:
-    - asgiref >=3.5,<4
-    - daphne >=4,<5
-    - django >=3.2,<5
-    - python >=3.7
+    - asgiref >=3.6.0,<4
+    - daphne >=4.0.0
+    - django >=4.2
+    - python >=3.8
 
 test:
   imports:
