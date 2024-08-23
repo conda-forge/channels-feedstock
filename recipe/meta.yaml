@@ -1,5 +1,5 @@
 {% set name = "channels" %}
-{% set version = "4.1.0" %}
+{% set version = "4.0.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: e0ed375719f5c1851861f05ed4ce78b0166f9245ca0ecd836cb77d4bb531489d
+  sha256: 0ce53507a7da7b148eaa454526e0e05f7da5e5d1c23440e4886cf146981d8420
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . --no-deps -vv
   noarch: python
 
@@ -20,8 +20,8 @@ requirements:
     - python >=3.7
   run:
     - asgiref >=3.5,<4
-    - daphne >=4,<5
-    - django >=3.2,<5
+    - daphne >=4.0.0
+    - django >=3.2
     - python >=3.7
 
 test:
@@ -38,7 +38,7 @@ about:
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE
-  summary: Brings async, event-driven capabilities to Django. Django 2.2 and up only.
+  summary: Brings async, event-driven capabilities to Django. Django 3.2 and up only.
   doc_url: https://channels.readthedocs.io
   dev_url: http://github.com/django/channels
 
