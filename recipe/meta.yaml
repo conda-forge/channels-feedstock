@@ -1,28 +1,31 @@
 {% set name = "channels" %}
-{% set version = "4.1.0" %}
+{% set version = "4.2.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: e0ed375719f5c1851861f05ed4ce78b0166f9245ca0ecd836cb77d4bb531489d
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: d9e707487431ba5dbce9af982970dab3b0efd786580fadb99e45dca5e39fdd59
 
 build:
-  number: 1
-  script: {{ PYTHON }} -m pip install . --no-deps -vv
+  number: 0
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   noarch: python
 
 requirements:
   host:
+    - python {{ python_min }}
     - pip
-    - python >=3.8
+    - setuptools
   run:
+    - python >={{ python_min }}
     - asgiref >=3.6.0,<4
-    - daphne >=4.0.0
     - django >=4.2
-    - python >=3.8
+# daphne is [options.extras_require] and not install_requires Refer https://github.com/django/channels/blob/main/setup.cfg#L38 
+  run_constrained:
+    - daphne >=4.0.0
 
 test:
   imports:
@@ -32,6 +35,15 @@ test:
     - channels.management.commands
     - channels.security
     - channels.testing
+  commands:
+    - pip check
+  requires:
+    - python {{ python_min }}
+    - pip
+# daphne is needed for channels.testing
+    - daphne >=4.0.0
+# pip check error incremental 24.7.2 requires tomli, which is not installed. Refer https://github.com/conda-forge/channels_redis-feedstock/blob/main/recipe/meta.yaml#L27
+    - tomli
 
 about:
   home: http://github.com/django/channels
