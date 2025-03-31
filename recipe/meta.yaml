@@ -1,5 +1,5 @@
 {% set name = "channels" %}
-{% set version = "4.2.1" %}
+{% set version = "4.2.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: dc3d56c8e5b2bcd73320e410ee13e5a1970b535d9327c82dc397f2e13eaa60a8
+  sha256: 8d7208e48ab8fdb972aaeae8311ce920637d97656ffc7ae5eca4f93f84bcd9a0
 
 build:
   number: 0
